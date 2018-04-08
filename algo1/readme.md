@@ -88,3 +88,25 @@
         return j;
     }
 ```
+#### Ëæ»ú¿ìËÙÅÅÐò
+```java
+    public static void sort(int[] arr){
+        quickSort(arr,0,arr.length-1);
+    }
+    public static void quickSort(int[] arr,int l,int r){
+        if(l>=r)return;
+        int p = partition(arr,l,r);
+        quickSort(arr,l,p-1);
+        quickSort(arr,p+1,r);
+    }
+    public static int partition(int[] arr,int l,int r){
+        SortUtil.swap(arr,l,SortUtil.randomIntBetween(l, r));
+        int compare = arr[l];
+        int j = l;
+        for(int i = l+1;i<=r;i++){
+            if(arr[i]<compare)SortUtil.swap(arr,i,++j);
+        }
+        SortUtil.swap(arr,l,j);
+        return j;
+    }
+```
