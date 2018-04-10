@@ -1,3 +1,5 @@
+package sort;
+
 import sort.SortUtil;
 
 public class QuickSortThreeWays {
