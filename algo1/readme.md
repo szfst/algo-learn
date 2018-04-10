@@ -203,3 +203,72 @@ static int  reversePair = 0;
         return j;
     }
 ```
+#### 构建堆
+#### 堆插入（shiftUp）
+```java
+    public void insert(int value){
+        assert count+1<=capacity;
+        arr[++count]=value;
+        shiftUp(count);
+    }
+    private void shiftUp(int k){
+        if(k>1 && arr[k]>arr[k/2]){
+            SortUtil.swap(arr,k,k/2);
+            shiftUp(k/2);
+        }
+    }
+``` 
+#### 堆移除元素(最大值和最后一个元素交换位置之后shiftDown)
+```java
+    public int removeMax(){
+      if(count<=0)return -1;
+      SortUtil.swap(arr,1,count);
+      int ret = arr[count--];
+      shiftDown(1);
+      return ret;
+    }
+    //索引从0开始的shiftDown
+    public void shiftDown(int k){
+        int swapK = 2*k;
+        if(swapK>count)return ;
+        if(swapK+1<=count && arr[swapK]<arr[swapK+1]){
+            swapK = swapK+1;
+        }
+        if(arr[swapK]>arr[k]){
+            SortUtil.swap(arr,swapK,k);
+            shiftDown(swapK);
+        }
+    }
+``` 
+#### heapify
+    public MaxHeap(int[] arr,int capacity){
+        this.capacity = capacity;
+        this.arr = new int[capacity+1];
+        for(int i = 0;i<arr.length;i++){
+            count++;
+            this.arr[i+1]=arr[i];
+        }
+        for(int i = arr.length/2;i>=1;i--){
+            shiftDown(i);
+        }
+    }
+#### 原地堆排序，索引从0开始
+```java
+    public void heapSortUsingNoSpace(int[] nums){
+         this.count = nums.length;
+         arr = nums;
+         //heapify
+        for(int i = (count-1-1)/2;i>=0;i--){
+            shiftDown1(i);
+        }
+        //sort
+        for(int i = arr.length-1;i>=0;i--){
+            SortUtil.swap(arr,0,i);
+            count--;
+            shiftDown1(0);
+        }
+        for(int i = 0;i<arr.length;i++){
+            System.out.println(arr[i]);
+        }
+    }
+```
