@@ -308,3 +308,94 @@ class Solution {
     }
 }
 ```
+
+#### 二分搜索
+```java
+    private int binarySearch(int[] arr,int value){
+        return binarySearch(arr,value,0,arr.length-1);
+    }
+    private int binarySearch(int[] arr,int value,int l ,int r){
+        if(l>r)return -1;
+        int mid = l+(r-l)/2;//很重要，防止整形溢出;另外这个是jdk1.6以后的实现(low + high)>>>1无符号右移，记住是>>>而不是>>
+        if(arr[mid]==value){
+            return mid;
+        }else if(arr[mid]>value){
+            return binarySearch(arr,value,l,mid-1);
+        }else{
+            return binarySearch(arr,value,mid+1,r);
+        }
+    }
+```
+#### 构建二分搜索树（不需要是完全二叉树，所以不用数组存储；插入、删除、查找都时间复杂度都为lgN）
+- 性质一：左节点<跟节点<右节点
+- 性质二：它的左右子树均为二分查找树。
+- 性质三：若它的左子树不为空，则左子树上所有结点的值均小于根结点的值；若它的右子树不为空，则右子树上所有结点的值均大于根结点的值；
+#### 二分搜索树插入
+```java
+    public void insert(int key,int value){
+        root = insert(root,key,value);
+    }
+    private Node insert(Node node,int key,int value){
+        if(node==null){
+            count++;
+            return new Node(key,value);
+        }
+        //如果是当前节点，修改值
+        if(key==node.key){
+            node.value = value;
+        }else if(key>node.key){
+            node.right =  insert(node.right,key,value);
+        }else{
+            node.left =  insert(node.left,key,value);
+        }
+        return node;
+    }
+```
+#### 二分搜索树查找
+```java
+    public Node search(int key){
+        return search(root,key);
+    }
+    private Node search(Node node,int key){
+        if(node==null)return null;
+        if(node.key == key){
+            return node;
+        }else if (node.key<key){
+            return search(node.right,key);
+        }else {
+            return search(node.left,key);
+        }
+    }
+```
+#### 二分搜索树深度优先遍历（前序遍历、中序遍历、后续遍历）
+```java
+   public void preOrderTravel(){
+        preOrderTravel(root);
+    }
+    private void preOrderTravel(Node node){
+        if(node==null) return ;
+        System.out.println(node.key);
+        preOrderTravel(node.left);
+        preOrderTravel(node.right);
+    }
+    public void inOrderTravel(){
+        inOrderTravel(root);
+    }
+    private void inOrderTravel(Node node){
+        if(node==null) return ;
+        System.out.println(node.key);
+        inOrderTravel(node.left);
+        inOrderTravel(node.right);
+    }
+    public void postOrderTravel(){
+        postOrderTravel(root);
+    }
+    private void postOrderTravel(Node node){
+        if(node==null) return ;
+        System.out.println(node.key);
+        postOrderTravel(node.left);
+        postOrderTravel(node.right);
+    }
+```
+#### 通过前序遍历和中序遍历找出后续遍历的思路：
+先根据前序遍历找出根节点，再根据中序遍历和根节点找出左右子树，就可以递归地找到树的结构进而求出后序遍历（也可以不找出树的结构直接输出后续遍历）

@@ -25,11 +25,71 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MaxHeap.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MaxHeap.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sort/heap/MaxHeap.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="77" column="28" lean-forward="true" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
+            <state relative-caret-position="-874">
+              <caret line="51" column="23" lean-forward="true" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BinarySearch.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/binarySearch/BinarySearch.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="10" column="34" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="18" selection-end-column="5" />
+              <folding>
+                <element signature="e#128#129#0" expanded="true" />
+                <element signature="e#189#190#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BinarySearchTree.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/sort/heap/BinarySearchTree.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="263">
+              <caret line="102" column="37" lean-forward="false" selection-start-line="102" selection-start-column="37" selection-end-line="102" selection-end-column="37" />
+              <folding>
+                <element signature="e#568#569#0" expanded="true" />
+                <element signature="e#596#597#0" expanded="true" />
+                <element signature="e#647#648#0" expanded="true" />
+                <element signature="e#680#681#0" expanded="true" />
+                <element signature="e#723#724#0" expanded="true" />
+                <element signature="e#768#769#0" expanded="true" />
+                <element signature="e#806#807#0" expanded="true" />
+                <element signature="e#847#848#0" expanded="true" />
+                <element signature="e#880#881#0" expanded="true" />
+                <element signature="e#919#920#0" expanded="true" />
+                <element signature="e#1932#1933#0" expanded="true" />
+                <element signature="e#1968#1969#0" expanded="true" />
+                <element signature="e#2192#2193#0" expanded="true" />
+                <element signature="e#2227#2228#0" expanded="true" />
+                <element signature="e#2450#2451#0" expanded="true" />
+                <element signature="e#2487#2488#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ShellSort.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sort/ShellSort.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SelectionSort.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/sort/SelectionSort.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="42">
+              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="19" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -78,6 +138,8 @@
         <option value="$PROJECT_DIR$/src/sort/QuickSortThreeWays.java" />
         <option value="$PROJECT_DIR$/src/MaxHeap.java" />
         <option value="$PROJECT_DIR$/src/sort/heap/MaxHeap.java" />
+        <option value="$PROJECT_DIR$/src/binarySearch/BinarySearch.java" />
+        <option value="$PROJECT_DIR$/src/sort/heap/BinarySearchTree.java" />
       </list>
     </option>
   </component>
@@ -87,7 +149,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="113" />
     <option name="y" value="35" />
     <option name="width" value="1294" />
@@ -124,6 +186,19 @@
               <item name="algo1" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="algo1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="algo1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="sort" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="algo1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="algo1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="sort" type="462c0819:PsiDirectoryNode" />
+              <item name="heap" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -140,6 +215,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
+    <property name="SearchEverywhereHistoryKey" value="BinaryTree&#9;FILE&#9;jar://E:/java/jdk1.8.0_144/src.zip!/com/sun/source/tree/BinaryTree.java&#10;Binary&#9;PSI&#9;JAVA://binarySearch.BinarySearch" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -158,15 +234,15 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MaxHeap">
-    <configuration name="InsertionSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.BinarySearch">
+    <configuration name="BinarySearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="sort.*" />
+          <option name="PATTERN" value="binarySearch.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="sort.InsertionSort" />
+      <option name="MAIN_CLASS_NAME" value="binarySearch.BinarySearch" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -323,19 +399,19 @@
       <listeners />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.InsertionSort" />
-      <item index="1" class="java.lang.String" itemvalue="Application.QuickSortRandom" />
-      <item index="2" class="java.lang.String" itemvalue="Application.QuickSortThreeWays" />
-      <item index="3" class="java.lang.String" itemvalue="Application.QuickSortSolve" />
-      <item index="4" class="java.lang.String" itemvalue="Application.MaxHeap" />
+      <item index="0" class="java.lang.String" itemvalue="Application.QuickSortRandom" />
+      <item index="1" class="java.lang.String" itemvalue="Application.QuickSortThreeWays" />
+      <item index="2" class="java.lang.String" itemvalue="Application.QuickSortSolve" />
+      <item index="3" class="java.lang.String" itemvalue="Application.MaxHeap" />
+      <item index="4" class="java.lang.String" itemvalue="Application.BinarySearch" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.MaxHeap" />
-        <item index="1" class="java.lang.String" itemvalue="Application.QuickSortSolve" />
-        <item index="2" class="java.lang.String" itemvalue="Application.QuickSortThreeWays" />
-        <item index="3" class="java.lang.String" itemvalue="Application.QuickSortRandom" />
-        <item index="4" class="java.lang.String" itemvalue="Application.InsertionSort" />
+        <item index="0" class="java.lang.String" itemvalue="Application.BinarySearch" />
+        <item index="1" class="java.lang.String" itemvalue="Application.MaxHeap" />
+        <item index="2" class="java.lang.String" itemvalue="Application.QuickSortSolve" />
+        <item index="3" class="java.lang.String" itemvalue="Application.QuickSortThreeWays" />
+        <item index="4" class="java.lang.String" itemvalue="Application.QuickSortRandom" />
       </list>
     </recent_temporary>
   </component>
@@ -347,6 +423,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="73e92067-e23b-4a89-ac65-9bd7ee2eacbe" name="Default" comment="" />
@@ -354,15 +433,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1523151264130</updated>
-      <workItem from="1523151270477" duration="33942000" />
+      <workItem from="1523151270477" duration="40825000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33942000" />
+    <option name="totallyTimeSpent" value="40825000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="113" y="35" width="1294" height="784" extended-state="0" />
+    <frame x="113" y="35" width="1294" height="784" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -380,13 +459,13 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31029186" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31029186" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Run with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959481" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle View" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37634408" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37634408" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Debug with VisualVM" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39938557" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -418,26 +497,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sort/ShellSort.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://E:/java/jdk1.8.0_144/src.zip!/java/util/Arrays.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
           <caret line="3587" column="67" lean-forward="false" selection-start-line="3587" selection-start-column="67" selection-end-line="3587" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sort/SelectionSort.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="13" column="17" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="19" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -540,9 +603,71 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/sort/heap/MaxHeap.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="77" column="28" lean-forward="true" selection-start-line="77" selection-start-column="28" selection-end-line="77" selection-end-column="28" />
+        <state relative-caret-position="-874">
+          <caret line="51" column="23" lean-forward="true" selection-start-line="51" selection-start-column="23" selection-end-line="51" selection-end-column="23" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/java/jdk1.8.0_144/src.zip!/com/sun/source/tree/BinaryTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="43" column="20" lean-forward="true" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#726#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sort/ShellSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sort/SelectionSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="19" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/binarySearch/BinarySearch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="34" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="18" selection-end-column="5" />
+          <folding>
+            <element signature="e#128#129#0" expanded="true" />
+            <element signature="e#189#190#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sort/heap/BinarySearchTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="102" column="37" lean-forward="false" selection-start-line="102" selection-start-column="37" selection-end-line="102" selection-end-column="37" />
+          <folding>
+            <element signature="e#568#569#0" expanded="true" />
+            <element signature="e#596#597#0" expanded="true" />
+            <element signature="e#647#648#0" expanded="true" />
+            <element signature="e#680#681#0" expanded="true" />
+            <element signature="e#723#724#0" expanded="true" />
+            <element signature="e#768#769#0" expanded="true" />
+            <element signature="e#806#807#0" expanded="true" />
+            <element signature="e#847#848#0" expanded="true" />
+            <element signature="e#880#881#0" expanded="true" />
+            <element signature="e#919#920#0" expanded="true" />
+            <element signature="e#1932#1933#0" expanded="true" />
+            <element signature="e#1968#1969#0" expanded="true" />
+            <element signature="e#2192#2193#0" expanded="true" />
+            <element signature="e#2227#2228#0" expanded="true" />
+            <element signature="e#2450#2451#0" expanded="true" />
+            <element signature="e#2487#2488#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
