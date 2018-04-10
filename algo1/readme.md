@@ -272,3 +272,39 @@ static int  reversePair = 0;
         }
     }
 ```
+#### 排序算法的稳定性
+插入排序、归并排序稳定；快速排序和堆排序不稳定
+#### 索引堆
+#### 用堆（优先队列）实现n路归并排序
+- https://leetcode.com/submissions/detail/146156487/
+```java
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public ListNode mergeKLists(ListNode[] lists) {
+    PriorityQueue<ListNode> p = new PriorityQueue<>((o1, o2) -> o1.val<o2.val?-1:1);
+       for(ListNode item:lists){
+           if(item!=null){
+               p.add(item);
+           }
+       }
+       ListNode head = new ListNode(0);
+       ListNode cur = head;
+       while(!p.isEmpty()){
+           ListNode peek = p.remove();
+           cur.next = peek;
+           if(peek.next!=null){
+               p.add(peek.next);
+           }
+           cur=cur.next;
+       }
+       return head.next;
+    }
+}
+```
