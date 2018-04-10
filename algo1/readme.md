@@ -397,5 +397,25 @@ class Solution {
         postOrderTravel(node.right);
     }
 ```
+#### 二叉树层序遍历
+```java
+    public void levelOrderTravel(){
+        if(root==null)return;
+        //使用LinkedList来作为我们的队列
+        LinkedList<Node> p = new LinkedList<>();
+        p.add(root);
+        while(!p.isEmpty()){
+            Node node = p.remove();
+            if(node.left!=null)p.add(node.left);
+            if(node.right!=null)p.add(node.right);
+            System.out.println(node.value);
+        }
+    }
+```
+#### 二叉搜索树删除节点
+- 只有左孩子或者右孩子：删除了直接把左孩子或者右孩子添加到原来的位置
+- 既有左孩子又有右孩子：根据二叉搜索树的定义，右子树的最小值既大于左子树最大值，又小于右子树最大值，适合替换当前删除的节点
+#### 通过二叉搜索树找出某个值的位置（rank），或者通过某个值的位置找出某个值（select）：构造二叉搜索树的时候，节点增加一个值，这个值就是孩子节点的个数。
+#### 平衡二叉树局限性：有可能导致不平衡，所以出现平衡二叉树，例如红黑树，avl树，2-3tree等。
 #### 通过前序遍历和中序遍历找出后续遍历的思路：
 先根据前序遍历找出根节点，再根据中序遍历和根节点找出左右子树，就可以递归地找到树的结构进而求出后序遍历（也可以不找出树的结构直接输出后续遍历）

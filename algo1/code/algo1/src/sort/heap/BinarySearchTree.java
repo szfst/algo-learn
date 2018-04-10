@@ -1,5 +1,7 @@
 package sort.heap;
 
+import java.util.LinkedList;
+
 public class BinarySearchTree {
     // 树中的节点为私有的类, 外界不需要了解二分搜索树节点的具体实现
     private class Node {
@@ -100,7 +102,35 @@ public class BinarySearchTree {
         if(node==null) return ;
         System.out.println(node.key);
         postOrderTravel(node.left);
-        postOrderTravel(node.right); 
+        postOrderTravel(node.right);
+    }
+    public void levelOrderTravel(){
+        if(root==null)return;
+        //使用LinkedList来作为我们的队列
+        LinkedList<Node> p = new LinkedList<>();
+        p.add(root);
+        while(!p.isEmpty()){
+            Node node = p.remove();
+            if(node.left!=null)p.add(node.left);
+            if(node.right!=null)p.add(node.right);
+            System.out.println(node.value);
+        }
+    }
+    public Node getMax(){
+        return getMax(root);
+    }
+    public Node getMin(){
+        return getMin(root);
+    }
+    private Node getMax(Node node){
+        if(node==null)return null;
+        if(node.right==null)return node;
+        return getMax(node.right);
+    }
+    private Node getMin(Node node){
+        if(node==null)return null ;
+        if(node.left==null)return node;
+        return getMin(node.left);
     }
 
 
