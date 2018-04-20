@@ -26,6 +26,7 @@
         //先把大的排出来（这里可以优化为arr.length-1，因为最后一轮只有一个元素，不用比较了）
         for(int i = 0;i<arr.length;i++){
             for(int j = 0;j<arr.length-1-i;j++){
+               //这里是从小到大，如果是从大到小就变成小于号
                 if(arr[j]>arr[j+1]){
                     SortUtil.swap(arr,j,j+1);
                 }
