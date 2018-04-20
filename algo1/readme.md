@@ -1,4 +1,4 @@
-#####  ѡ������
+#####  选择排序
 ``` java
     public static void sort(int[] arr){
         for(int i = 0;i<arr.length;i++){
@@ -9,7 +9,7 @@
         }
     }
 ```
-#### ��������
+#### 插入排序
 ``` java
     public static void sort(int[] arr){
         for(int i = 1;i<arr.length;i++){
@@ -19,11 +19,11 @@
         }
     }
 ```
-#### ���������Ż���������Ԫ�أ�
-#### ð������
+#### 插入排序优化（不交换元素）
+#### 冒泡排序
 ```java
     public static void sort(int[] arr){
-        //�ȰѴ���ų���
+        //先把大的排出来（这里可以优化为arr.length-1，因为最后一轮只有一个元素，不用比较了）
         for(int i = 0;i<arr.length;i++){
             for(int j = 0;j<arr.length-1-i;j++){
                 if(arr[j]>arr[j+1]){
@@ -33,13 +33,13 @@
         }
     }
 ```
-#### �鲢����
+#### 归并排序
 ``` java
     public static void sort(int[] arr){
         mergeSort(arr,0,arr.length-1);
     }
     public static void mergeSort(int[] arr,int l,int r){
-        if(l>=r)return;//��r-lС���ص�ֵ��ʱ�������insertion
+        if(l>=r)return;//当r-l小于特点值的时候可以用insertion
         int mid = (l+r)/2;
         mergeSort(arr,l,mid);
         mergeSort(arr,mid+1,r);
@@ -61,13 +61,13 @@
         }
     }
 ```
-#### ��������
+#### 快速排序
 ```java
     public static void sort(int[] arr){
         quickSort(arr,0,arr.length-1);
     }
     public static void quickSort(int[] arr,int l,int r){
-        if(l>=r)return;//�����Ż�Ϊ��r-lС��ĳ��ֵ��ʱ��ʹ�ò�������
+        if(l>=r)return;//可以优化为当r-l小于某个值的时候使用插入排序
         int p = partition(arr, l, r);
         quickSort(arr,l,p-1);
         quickSort(arr,p+1,r);
@@ -88,7 +88,7 @@
         return j;
     }
 ```
-#### �����������
+#### 随机快速排序
 ```java
     public static void sort(int[] arr){
         quickSort(arr,0,arr.length-1);
@@ -110,7 +110,7 @@
         return j;
     }
 ```
-#### ��·����
+#### 三路快排
 ```java
 public static void sort(int[] arr){
         quickSort(arr,0,arr.length-1);
@@ -140,16 +140,16 @@ public static void sort(int[] arr){
         return new int[]{lt-1,gt};
     }
 ```
-#### ���ù鲢����鲢��˼·Ѱ�������
+#### 利用归并排序归并的思路寻找逆序对
 ```java
 static int  reversePair = 0;
-    //Ѱ�������
+    //寻找逆序对
     public static int getReversePair(int[] arr){
         mergeSort(arr,0,arr.length-1);
         return reversePair;
     }
     public static void mergeSort(int[] arr,int l,int r){
-        if(l>=r)return;//��r-lС���ص�ֵ��ʱ�������insertion
+        if(l>=r)return;//当r-l小于特点值的时候可以用insertion
         int mid = (l+r)/2;
         mergeSort(arr,l,mid);
         mergeSort(arr,mid+1,r);
@@ -166,18 +166,18 @@ static int  reversePair = 0;
             }else if(arrCopy[i-l]<=arrCopy[j-l]){
                 arr[k]=arrCopy[i-l];i++;
             }else if(arrCopy[i-l]>arrCopy[j-l]){
-                //�ؼ�����
+                //关键步骤
                 reversePair +=mid-i+1;
                 arr[k]=arrCopy[j-l];j++;
             }
         }
     }
 ```
-#### ���ÿ�������˼·�������һ�������е�k���ֵ����O(n)��ʱ�临�Ӷȡ�
+#### 利用快速排序思路解决：求一个数组中第k大的值，用O(n)的时间复杂度。
 ```java
-    //Ѱ�ҵ�k��ֵ��������0��ʼ
+    //寻找第k的值，索引从0开始
     public int findKMaxProblem(int[] arr,int k){
-        //���������1��ʼ����k=arr.length-k
+        //如果索引从1开始，则k=arr.length-k
         k = arr.length-1-k;
         return findKMaxProblem(arr,k,0,arr.length-1);
     }
@@ -203,8 +203,8 @@ static int  reversePair = 0;
         return j;
     }
 ```
-#### ������
-#### �Ѳ��루shiftUp��
+#### 构建堆
+#### 堆插入（shiftUp）
 ```java
     public void insert(int value){
         assert count+1<=capacity;
@@ -218,7 +218,7 @@ static int  reversePair = 0;
         }
     }
 ``` 
-#### ���Ƴ�Ԫ��(���ֵ�����һ��Ԫ�ؽ���λ��֮��shiftDown)
+#### 堆移除元素(最大值和最后一个元素交换位置之后shiftDown)
 ```java
     public int removeMax(){
       if(count<=0)return -1;
@@ -227,7 +227,7 @@ static int  reversePair = 0;
       shiftDown(1);
       return ret;
     }
-    //������0��ʼ��shiftDown
+    //索引从0开始的shiftDown
     public void shiftDown(int k){
         int swapK = 2*k;
         if(swapK>count)return ;
@@ -252,7 +252,7 @@ static int  reversePair = 0;
             shiftDown(i);
         }
     }
-#### ԭ�ض�����������0��ʼ
+#### 原地堆排序，索引从0开始
 ```java
     public void heapSortUsingNoSpace(int[] nums){
          this.count = nums.length;
@@ -272,10 +272,10 @@ static int  reversePair = 0;
         }
     }
 ```
-#### �����㷨���ȶ���
-�������򡢹鲢�����ȶ�����������Ͷ������ȶ�
-#### ������
-#### �öѣ����ȶ��У�ʵ��n·�鲢����
+#### 排序算法的稳定性
+插入排序、归并排序稳定；快速排序和堆排序不稳定
+#### 索引堆
+#### 用堆（优先队列）实现n路归并排序
 - https://leetcode.com/submissions/detail/146156487/
 ```java
 /**
@@ -309,14 +309,14 @@ class Solution {
 }
 ```
 
-#### ��������
+#### 二分搜索
 ```java
     private int binarySearch(int[] arr,int value){
         return binarySearch(arr,value,0,arr.length-1);
     }
     private int binarySearch(int[] arr,int value,int l ,int r){
         if(l>r)return -1;
-        int mid = l+(r-l)/2;//����Ҫ����ֹ�������;���������jdk1.6�Ժ��ʵ��(low + high)>>>1�޷������ƣ���ס��>>>������>>
+        int mid = l+(r-l)/2;//很重要，防止整形溢出;另外这个是jdk1.6以后的实现(low + high)>>>1无符号右移，记住是>>>而不是>>
         if(arr[mid]==value){
             return mid;
         }else if(arr[mid]>value){
@@ -326,11 +326,11 @@ class Solution {
         }
     }
 ```
-#### ��������������������Ҫ����ȫ�����������Բ�������洢�����롢ɾ�������Ҷ�ʱ�临�Ӷȶ�ΪlgN��
-- ����һ����ڵ�<���ڵ�<�ҽڵ�
-- ���ʶ�����������������Ϊ���ֲ�������
-- ����������������������Ϊ�գ��������������н���ֵ��С�ڸ�����ֵ����������������Ϊ�գ��������������н���ֵ�����ڸ�����ֵ��
-#### ��������������
+#### 构建二分搜索树（不需要是完全二叉树，所以不用数组存储；插入、删除、查找都时间复杂度都为lgN）
+- 性质一：左节点<跟节点<右节点
+- 性质二：它的左右子树均为二分查找树。
+- 性质三：若它的左子树不为空，则左子树上所有结点的值均小于根结点的值；若它的右子树不为空，则右子树上所有结点的值均大于根结点的值；
+#### 二分搜索树插入
 ```java
     public void insert(int key,int value){
         root = insert(root,key,value);
@@ -340,7 +340,7 @@ class Solution {
             count++;
             return new Node(key,value);
         }
-        //����ǵ�ǰ�ڵ㣬�޸�ֵ
+        //如果是当前节点，修改值
         if(key==node.key){
             node.value = value;
         }else if(key>node.key){
@@ -351,7 +351,7 @@ class Solution {
         return node;
     }
 ```
-#### ��������������
+#### 二分搜索树查找
 ```java
     public Node search(int key){
         return search(root,key);
@@ -367,7 +367,7 @@ class Solution {
         }
     }
 ```
-#### ����������������ȱ�����ǰ��������������������������
+#### 二分搜索树深度优先遍历（前序遍历、中序遍历、后续遍历）
 ```java
    public void preOrderTravel(){
         preOrderTravel(root);
@@ -397,11 +397,11 @@ class Solution {
         postOrderTravel(node.right);
     }
 ```
-#### �������������
+#### 二叉树层序遍历
 ```java
     public void levelOrderTravel(){
         if(root==null)return;
-        //ʹ��LinkedList����Ϊ���ǵĶ���
+        //使用LinkedList来作为我们的队列
         LinkedList<Node> p = new LinkedList<>();
         p.add(root);
         while(!p.isEmpty()){
@@ -412,41 +412,41 @@ class Solution {
         }
     }
 ```
-#### ����������ɾ���ڵ�
-- ֻ�����ӻ����Һ��ӣ�ɾ����ֱ�Ӱ����ӻ����Һ������ӵ�ԭ����λ��
-- �������������Һ��ӣ����ݶ����������Ķ��壬����������Сֵ�ȴ������������ֵ����С�����������ֵ���ʺ��滻��ǰɾ���Ľڵ�
-#### ͨ�������������ҳ�ĳ��ֵ��λ�ã�rank��������ͨ��ĳ��ֵ��λ���ҳ�ĳ��ֵ��select�������������������ʱ�򣬽ڵ�����һ��ֵ�����ֵ���Ǻ��ӽڵ�ĸ�����
-#### ƽ������������ԣ��п��ܵ��²�ƽ�⣬���Գ���ƽ�������������������avl����2-3tree�ȡ�
-#### ͨ��ǰ���������������ҳ�����������˼·��
-�ȸ���ǰ������ҳ����ڵ㣬�ٸ�����������͸��ڵ��ҳ������������Ϳ��Եݹ���ҵ����Ľṹ����������������Ҳ���Բ��ҳ����Ľṹֱ���������������
-#### ���鼯
-- ˼�����ǽ��һ�������ʱ���ǲ���˳������˱�����⣬�����㷨�����ܲ��ܴﵽ����
-- ���鼯�Ż��ṹ������һ�����ڵ㣬Ĭ��ָ���Լ�������ʱ��ָ����ڵ�
-- ���鼯�Ż�һ�������ٵļ�����������ļ�
-- ���鼯�Ż����������ٵļ����������ļ��ϣ��������ϲ���һ����ʱ�򣬲����Ż��һ
-- ���鼯�Ż�����·��ѹ����ʱ�临�Ӷȿ��Խ���O(1)
-#### ͼ��������ȱ���
-- ʹ���ڽӱ�ʱ�临�Ӷ�O(V+E)��ʹ���ڽӾ���ʱ�临�Ӷ�O(V^2)
-#### ͼ�Ĺ�����ȱ���
-- ʹ���ڽӱ�ʱ�临�Ӷ�O(V+E)��ʹ���ڽӾ���ʱ�临�Ӷ�O(V^2)
-- ��Ȩͼ�Ĺ�����ȱ������� �ҳ����·��
-#### ��С������
-- ��Ȩͼ����С�������������ͨͼ
-- �зֶ��������������з֣����б���Ȩֵ��С�ı߱�Ȼ������С������
-- lazy prim������С��ʵ�֣�O(ElogE)
-- prim �Ż�����ӵ�ʱ���������������ڵ���̱ߡ���������ʵ�֡�������ֻά��V��Ԫ�ء�ʱ�临�Ӷ�O(ElgV)
-- Kruskal:ÿ���ҳ���С�ߣ�ֻҪ�����߲��ܹ��ɻ���������С��������Ӧ��һ���ߡ���μ���Ƿ��γɻ������鼯�����߼�����С��������ʱ��������unionһ�£��Ȱ����еı߼�����С���У� ÿ��ȡ����С�ı���0(ElogE)
-#### ��Դ���·����
-- �������·����
-- �����Ȩͼ
-- �ɳڲ���
-- dijkstra��Դ���·���㷨��ͼ�в����и�Ȩ�ߣ��ʺ�����ͼ������ͼ��O(ElgV)��ʹ����С�����ѡ�
-- bellman-ford:������Ȩ�ߣ����ǲ����и�Ȩ��������и�Ȩ�������������·��������㷨�ܹ������Ƿ��и�Ȩ����������һ�飬����������ɳڲ�������˵���и�Ȩ���������һ��ͼ��û�и�Ȩ������һ�㵽��һ������·������ྭ�����е�v�����㣬��v-1���ߣ����򣬴��ڵĶ��㾭�������Σ������ڸ�Ȩ����
-- �����������򣺴���������Ȩͼ��DAG��ʱ�临�Ӷ�O��V+E��
-- floyed�������޸�Ȩ����ͼ���������·���㷨�������˶�̬�滮��ʱ�临�Ӷ�O(V3)
-- �·��:������Ȩͼ������ʹ��dijkstra����·�����⣬���ǿ���ʹ��bellman ford��⣬ȡ�෴��������·�����ɡ��·�����ⲻ������Ȩ������Ȩͼ���·��������ָ�����Ѷȵġ�
-#### �㷨˼�룺
-- ����˼�룺�鲢���򣬿����������ṹ
-- ̰��˼�룺ѡ�����򣬶ѣ�kruskal��prim��dijkstra
-- �ݹ���ݣ����ı�����ͼ�ı���
-- ��̬�滮��prim��dijkstra
+#### 二叉搜索树删除节点
+- 只有左孩子或者右孩子：删除了直接把左孩子或者右孩子添加到原来的位置
+- 既有左孩子又有右孩子：根据二叉搜索树的定义，右子树的最小值既大于左子树最大值，又小于右子树最大值，适合替换当前删除的节点
+#### 通过二叉搜索树找出某个值的位置（rank），或者通过某个值的位置找出某个值（select）：构造二叉搜索树的时候，节点增加一个值，这个值就是孩子节点的个数。
+#### 平衡二叉树局限性：有可能导致不平衡，所以出现平衡二叉树，例如红黑树，avl树，2-3tree等。
+#### 通过前序遍历和中序遍历找出后续遍历的思路：
+先根据前序遍历找出根节点，再根据中序遍历和根节点找出左右子树，就可以递归地找到树的结构进而求出后序遍历（也可以不找出树的结构直接输出后续遍历）
+#### 并查集
+- 思考我们解决一个问题的时候，是不是顺带解决了别的问题，所以算法的性能不能达到最优
+- 并查集优化结构：定义一个父节点，默认指向自己，并的时候指向根节点
+- 并查集优化一：数量少的集并向数量多的集
+- 并查集优化二：层数少的集并向层数多的集合，两个集合层数一样的时候，层数才会加一
+- 并查集优化三：路径压缩，时间复杂度可以近乎O(1)
+#### 图的深度优先遍历
+- 使用邻接表时间复杂度O(V+E)，使用邻接矩阵时间复杂度O(V^2)
+#### 图的广度优先遍历
+- 使用邻接表时间复杂度O(V+E)，使用邻接矩阵时间复杂度O(V^2)
+- 无权图的广度优先遍历可以 找出最短路径
+#### 最小生成树
+- 有权图的最小生成树，针对连通图
+- 切分定理：给定任意切分，横切边中权值最小的边必然属于最小生成树
+- lazy prim：用最小堆实现，O(ElogE)
+- prim 优化：入队的时候，求出与各个边相邻的最短边。用索引堆实现。堆里面只维护V个元素。时间复杂度O(ElgV)
+- Kruskal:每次找出最小边，只要这条边不能构成环，就是最小生成树相应的一条边。如何监控是否形成环：并查集，将边加入最小生成树的时候把这个边union一下；先把所有的边加入最小堆中， 每次取出最小的表。0(ElogE)
+#### 单源最短路径：
+- 生成最短路径树
+- 针对有权图
+- 松弛操作
+- dijkstra单源最短路径算法：图中不能有负权边，适合有向图和无向图，O(ElgV)。使用最小索引堆。
+- bellman-ford:处理负权边，但是不能有负权环，如果有负权环，不存在最短路径。这个算法能够检测出是否有负权环（最后遍历一遍，如果还可以松弛操作，则说明有负权环），如果一个图中没有负权环，从一点到另一点的最短路径，最多经过所有的v个顶点，有v-1条边，否则，存在的顶点经过了两次，即存在负权环。
+- 利用拓扑排序：处理有向无权图（DAG）时间复杂度O（V+E）
+- floyed：处理无负权环的图的所有最短路径算法，利用了动态规划，时间复杂度O(V3)
+- 最长路径:对于有权图，不能使用dijkstra求解最长路径问题，但是可以使用bellman ford求解，取相反数求出最短路径即可。最长路径问题不能有正权环，无权图的最长路径问题是指数级难度的。
+#### 算法思想：
+- 分治思想：归并排序，快速排序，树结构
+- 贪心思想：选择排序，堆，kruskal，prim，dijkstra
+- 递归回溯：树的遍历，图的遍历
+- 动态规划：prim，dijkstra
